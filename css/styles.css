@@ -56,6 +56,10 @@ html {
 *::after {
   box-sizing: inherit;
 }
+*:focus {
+  outline: 2px dashed var(--text-color);
+  outline-offset: 3px;
+}
 
 body {
   display: flex;
@@ -102,13 +106,14 @@ main {
 
 .site-header {
   background-color: var(--element-bg);
+  box-shadow: 0 2px 9px rgb(0 0 0 / 5%);
 }
 
 .header {
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 24px;
+  padding: 24px 0;
 }
 
 .site-header-logo {
@@ -122,11 +127,145 @@ main {
 }
 
 .site-header-dark {
-  font-style: 16px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
   line-height: 22px;
   font-weight: 600;
   border: none;
   cursor: pointer;
   color: var(--text-color);
   background-color: var(--element-bg)
+}
+.site-header-dark::before {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px 0;
+  padding: 0;
+  content: '';
+  background-image: url("../img/icon-moon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+/* MAIN */
+.main-content {
+  display: flex;
+  align-items: center;
+  padding: 48px 0 48px;
+}
+
+.global-search-form {
+  display: block;
+  align-items: center;
+  color: var(--text-color);
+  box-shadow: 0 2px 9px rgb(0 0 0 / 5%);
+  margin: 0 auto 0 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.global-search-form-input {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 0 0;
+  width: 100%;
+  max-width: 480px;
+  padding: 18px 32px 18px 74px;
+  color: var(--text-color);
+  background-color: var(--element-bg);
+  background-size: 20px;
+  background-image: url("../img/icon-search.svg");
+  background-position: 32px center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.global-search-form-input::placeholder {
+  color: var(--text-color);
+}
+
+
+.select-list select {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  padding: 18px 18px 18px 24px;
+  border: none;
+  appearance: none;
+  background-image: url("../img/expand-more.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 172px center;
+  background-size: 9px 6px;
+  color: var(--text-color);
+  background-color:  var(--element-bg);
+  box-shadow: 0 2px 9px rgb(0 0 0 / 5%);
+}
+
+/* COUNTRY LIST */
+.country-card-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px 0px -30px -74px;
+  padding: 0;
+  list-style: none;
+}
+.country-card-list-item {
+  margin: 0px 0px 75px 74px;
+  width: 100%;
+  max-width: 264px;
+  border-radius: 7px;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.0294);
+  background-color: var(--element-bg);
+}
+.country-card-link {
+  display: block;
+  text-decoration: none;
+}
+.country-card-flag {
+  display: flex;
+  width: 264px;
+  height: 160px;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+}
+.country-card-info {
+  margin: 0;
+  padding: 24px 24px 46px;
+}
+.country-card-title {
+  margin: 0 0 16px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 800;
+  color: var(--text-color);
+}
+.country-card-info-text {
+  margin: 0;
+  padding: 0;
+}
+.country-card-info-text-wrapper {
+  display: flex;
+  margin: 0 0 8px;
+  padding: 0;
+  color: var(--text-color);
+}
+.country-card-info-text-wrapper dt {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 8px 0 0;
+}
+.country-card-info-text-wrapper dd {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
